@@ -11,6 +11,8 @@ import Todos from "./components/TodoRedux/todos";
 import { UserProvider } from "./context/api";
 import FormProvider from "./context/FormProvider";
 import { store } from "./app/store";
+import Counter from "./components/CounterRedux/Counter";
+import RedCounter from "./components/Counter Reducer/RedCounter";
 
 function App() {
   console.log(store);
@@ -33,6 +35,12 @@ function App() {
             </li>
             <li>
               <Link to="/ApiDataDisplay">API Data</Link>
+            </li>
+            <li>
+              <Link to="/Counter">Redux Counter</Link>
+            </li>
+            <li>
+              <Link to="/RedCounter">Reducer Counter</Link>
             </li>
             <li>
               <ThemeBtn />
@@ -103,6 +111,17 @@ function App() {
               <UserProvider>
                 <ApiDataDisplay />
               </UserProvider>
+            }
+          />
+
+          <Route path="/RedCounter" element={<RedCounter />} />
+
+          <Route
+            path="/Counter"
+            element={
+              <Provider store={store}>
+                <Counter />
+              </Provider>
             }
           />
         </Routes>

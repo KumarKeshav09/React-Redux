@@ -7,9 +7,9 @@ import { ThemeProvider } from "./context/theme";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <ThemeProvider>
+  <ThemeProvider className="dark:bg-black dark:text-white">
     <React.StrictMode>
-      <App />
+      <App className="dark:bg-black dark:text-white" />
     </React.StrictMode>
   </ThemeProvider>
 );
